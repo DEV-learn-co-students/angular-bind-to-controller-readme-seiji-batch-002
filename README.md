@@ -23,7 +23,7 @@ function TwitterCard() {
 	return {
     		template: [
     			'<div class="twitter">',
-    				'<a href="{{ twitter.link }}/{{ handle }}">Follow @{{ handle }} on Twitter!</a>',
+    				'<a href="{{ twitter.twitterLink }}/{{ handle }}">Follow @{{ handle }} on Twitter!</a>',
     			'</div>'
     		].join(''),
     		scope: {
@@ -44,7 +44,7 @@ angular
 	.directive('twitterCard', TwitterCard);
 ```
 
-You'll notice the inconsistency - we're using `{{ handle }}` as well as `{{ twitter.link }}`.
+You'll notice the inconsistency - we're using `{{ handle }}` as well as `{{ twitter.twitterLink }}`. This is data from our scope (passed through to the directive) as well as directive from our controller (using `this` to match best practices). Mixing the two isn't good!
 
 ### After
 
@@ -79,6 +79,6 @@ angular
 	.directive('twitterCard', TwitterCard);
 ```
 
-Order is restored. We now have consistency!
+Order is restored. We now have consistency! All of our values are now added to our controller's `this` object - meaning we're only accessing our data from our controller now!
 
 You might have noticed how we've still got our `scope` property - this is to tell Angular that we do still want a brand new scope - we're just not attaching anything to it.
