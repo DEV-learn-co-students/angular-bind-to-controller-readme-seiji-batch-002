@@ -48,6 +48,8 @@ You'll notice the inconsistency - we're using `{{ handle }}` as well as `{{ twit
 
 ### After
 
+To fix this, we'll add a property called `bindToController` to our directive containing the values we want to have passed through. 
+
 ```html
 <twitter-card handle="billgates"></twitter-card>
 ```
