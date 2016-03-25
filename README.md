@@ -59,7 +59,7 @@ function TwitterCard() {
 	return {
 		template: [
 			'<div class="twitter">',
-				'<a href="{{ twitter.link }}/{{ twitter.handle }}">Follow @{{ twitter.handle }} on Twitter!</a>',
+				'<a href="{{ twitter.twitterLink }}/{{ twitter.handle }}">Follow @{{ twitter.handle }} on Twitter!</a>',
 			'</div>'
 		].join(''),
 		scope: {},
@@ -84,3 +84,5 @@ angular
 Order is restored. We now have consistency! All of our values are now added to our controller's `this` object - meaning we're only accessing our data from our controller now!
 
 You might have noticed how we've still got our `scope` property - this is to tell Angular that we do still want a brand new scope - we're just not attaching anything to it.
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/angular-bind-to-controller-readme'>Angular Using bindToController</a> on Learn.co and start learning to code for free.</p>
